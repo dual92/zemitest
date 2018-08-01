@@ -1,0 +1,25 @@
+<?php
+function SQLCHECK($input_str, $rtn_type, $rtn_length)
+{
+	$input_str = Trim($input_str);
+	$input_str = str_replace("'","''",$input_str);
+	//$input_str = str_replace("../","",$input_str);
+	//$input_str = str_replace(";","",$input_str);
+	//$input_str = str_replace("|","£ü",$input_str);
+	//$input_str = str_replace("chr(34)","&quot;",$input_str);
+	//$input_str = str_replace($input_str,"<","&lt;");
+	//$input_str = str_replace($input_str,">","&gt;");
+	
+	if( $rtn_type == "0" && ($input_str == "" || is_null($input_str)) )
+	{
+		echo "<script>alert('Invalid input.');history.back();</script>";
+	}
+	
+	if( $rtn_length > 0 && strlen($input_str) > $rtn_length )
+	{
+		echo "<script>alert('The string longer than the specified length.');history.back();</script>";
+	}
+	
+	return $input_str;
+}
+?>

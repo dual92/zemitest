@@ -1,0 +1,10 @@
+<?php
+try
+{
+	$conn = new PDO('sqlsrv:server=192.168.1.157,14331;database=one','centoshttpd','!@zemi&*90');
+}
+catch (PDOException $e)
+{
+	$conn = false;
+}
+?>

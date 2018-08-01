@@ -1,0 +1,28 @@
+<?php
+	/*==================================================
+		TOKEN Data base
+		
+		01	:	DB #1
+		02	:	DB #2
+		...
+	==================================================*/
+	$TOKEN = $_REQUEST['TOKEN'];
+
+	try
+	{
+	
+		$serverName = "192.168.1.157,14331";				
+		$conn = new PDO('sqlsrv:server='.$serverName.';database=TM_GAME','centoshttpd','!@zemi&*90');				
+
+
+		if($conn)
+		{
+			$conn->query("SET ANSI_WARNINGS ON");
+		}
+	
+	}
+	catch (PDOException $e)
+	{
+		$conn = false;
+	}
+?>

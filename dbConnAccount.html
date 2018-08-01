@@ -1,0 +1,15 @@
+<?php
+try
+{
+	$conn = new PDO('sqlsrv:server=192.168.1.157,14331;database=TM_ACCOUNT','centoshttpd','!@zemi&*90');
+
+	if($conn)
+	{
+		$conn->query("SET ANSI_WARNINGS ON");
+	}	
+}
+catch (PDOException $e)
+{
+	$conn = false;
+}
+?>
